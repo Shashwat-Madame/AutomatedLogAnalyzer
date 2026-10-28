@@ -1,0 +1,88 @@
+========================================
+  AUTOMATED LOG FILE ANALYZER - NOTES
+========================================
+
+Project Name  : Automated Log File Analyzer
+Language      : Python
+Framework     : Streamlit
+Created       : 2026-10-28
+
+----------------------------------------
+PROJECT OVERVIEW
+----------------------------------------
+This tool analyzes system log files and provides:
+  - Visual charts (bar & pie) for log level distribution
+  - Summary metrics (Total, Critical, Errors, Warnings, Info, Debug)
+  - Filterable and searchable log entry table
+  - Most frequent issues breakdown
+  - Downloadable reports in CSV and TXT formats
+
+----------------------------------------
+PROJECT FILES
+----------------------------------------
+  app.py          - Main Streamlit web application
+  analyzer.py     - Core log parsing and analysis logic
+  sample.log      - Sample log file for testing
+  requirements.txt- Python dependencies
+  notes.txt       - This file
+
+----------------------------------------
+DEPENDENCIES
+----------------------------------------
+  - streamlit   : Web UI framework
+  - pandas      : Data manipulation
+  - plotly      : Interactive charts
+
+  Install with:
+    pip install -r requirements.txt
+
+----------------------------------------
+HOW TO RUN
+----------------------------------------
+  1. Activate virtual environment:
+       .\venv\Scripts\activate
+
+  2. Run the app:
+       streamlit run app.py
+
+  3. Open browser at:
+       http://localhost:8501
+
+----------------------------------------
+SUPPORTED LOG LEVELS
+----------------------------------------
+  CRITICAL  - System-critical failures
+  ERROR     - Errors that need attention
+  WARNING   - Potential issues
+  INFO      - Informational messages
+  DEBUG     - Debug/diagnostic messages
+
+----------------------------------------
+USAGE TIPS
+----------------------------------------
+  - Use "sample.log" to quickly test the app
+  - Upload your own .log or .txt file via sidebar
+  - Use the multiselect filter to focus on specific log levels
+  - Search by keyword to find specific log messages
+  - Download results as CSV for spreadsheet analysis
+  - Download as TXT for plain-text reporting
+
+----------------------------------------
+KNOWN ISSUES / TODO
+----------------------------------------
+  [ ] Add support for timestamp-based filtering
+  [ ] Add timeline chart for log events over time
+  [ ] Support for more log formats (JSON, XML)
+  [ ] Add email/alert notification for critical logs
+
+----------------------------------------
+NOTES / REMARKS
+----------------------------------------
+  - The app uses a regex-based parser in analyzer.py
+    to detect log levels from raw log lines.
+  - Unrecognized log lines are tagged as "UNKNOWN".
+  - The use_container_width deprecation warnings from
+    Streamlit are harmless; will be updated in a future
+    version to use width='stretch'.
+
+========================================
